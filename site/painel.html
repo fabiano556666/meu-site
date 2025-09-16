@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maitta Construções</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+    body {
+      background-color: #00ff99;
+      transition: background-color 3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      text-shadow: 0 0 8px #000;
+    }
+    header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .message {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .arrow {
+      font-size: 48px;
+      animation: bounce 2s infinite;
+      margin-bottom: 20px;
+    }
+    #whatsapp-btn {
+      background-color: #25D366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+      z-index: 1000;
+      margin: 0 auto;
+    }
+    #whatsapp-btn:hover {
+      background-color: #128C4A;
+    }
+    #whatsapp-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(15px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Maitta Construções<br>
+    <span style="font-size:16px;">Edilton Santos Nascimento - (11) 98021-0556</span>
+  </header>
+
+  <div class="message">Clique nesse botão do WhatsApp<br>para entrar em contato conosco</div>
+  <div class="arrow">⬇️</div>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5511980210556" target="_blank" id="whatsapp-btn" title="Fale conosco no WhatsApp" aria-label="Contato via WhatsApp">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M20.52 3.48A11.89 11.89 0 0 0 12 0C5.373 0 0 5.373 0 12a11.88 11.88 0 0 0 1.756 6.013L0 24l6.163-1.615A11.89 11.89 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.208-1.25-6.22-3.48-8.52zm-8.521 17.515a9.58 9.58 0 0 1-4.883-1.441l-.35-.208-3.65.957.974-3.558-.228-.363a9.503 9.503 0 0 1-1.48-5.222c0-5.266 4.278-9.544 9.544-9.544a9.49 9.49 0 0 1 6.735 2.792 9.462 9.462 0 0 1 2.791 6.752c0 5.265-4.277 9.542-9.544 9.542zm5.406-6.014c-.295-.147-1.746-.863-2.016-.961-.27-.098-.467-.147-.665.147s-.763.961-.935 1.16c-.173.198-.347.223-.643.074-.295-.147-1.244-.459-2.37-1.46-.875-.779-1.464-1.74-1.637-2.035-.173-.295-.018-.454.13-.601.134-.133.295-.347.443-.52.147-.173.196-.295.295-.492.098-.198.05-.37-.025-.52-.074-.147-.665-1.604-.91-2.197-.24-.575-.484-.5-.665-.51l-.57-.01c-.195 0-.52.074-.792.37s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.147.198 2.095 3.2 5.076 4.487.71.306 1.263.488 1.694.624.712.226 1.36.194 1.872.118.571-.085 1.746-.712 1.993-1.4.246-.688.246-1.28.172-1.4-.074-.118-.27-.198-.564-.347z"/>
+    </svg>
+  </a>
+
+  <script>
+    const colors = [
+      "#00ff99", "#0099ff", "#ff6600",
+      "#cc00cc", "#ff0066", "#33cc33", "#ffcc00"
+    ];
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    }
+
+    setInterval(changeBackground, 3000);
+  </script>
+
+</body>
+</html>
